@@ -1,4 +1,4 @@
-package $package$.kafka.config;
+package \$package\$.kafka.config;
 
 import com.rewe.omm.order.fixpoint.calculation.helper.OrderTimestampExtractor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,17 +24,17 @@ import static org.apache.kafka.streams.StreamsConfig.*;
 public class KafkaStreamsConfig {
     @Bean
     public Properties streamsConfig(
-        @Value("${kafka.application-id}") String applicationId,
-        @Value("${kafka.broker.address.list}") String bootstrapServers,
-        @Value("${kafka.security.protocol:}") String securityProtocol,
-        @Value("${kafka.sasl.mechanism:}") String saslMechanism,
-        @Value("${kafka.truststore.path:}") String sslTruststoreLocation,
-        @Value("${ssl.truststore.password:}") String sslTruststorePassword,
-        @Value("${kafka.ssl.keystore.path:}") String sslKeystoreLocation,
-        @Value("${ssl.keystore.password:}") String sslKeystorePassword,
-        @Value("${ssl.key.password:}") String sslKeyPassword,
-        @Value("${kafka.consumer.auto-offset-reset}") String autoOffsetReset,
-        @Value("${kafka.state.dir}") String stateDir
+        @Value("\${kafka.application-id}") String applicationId,
+        @Value("\${kafka.broker.address.list}") String bootstrapServers,
+        @Value("\${kafka.security.protocol:}") String securityProtocol,
+        @Value("\${kafka.sasl.mechanism:}") String saslMechanism,
+        @Value("\${kafka.truststore.path:}") String sslTruststoreLocation,
+        @Value("\${ssl.truststore.password:}") String sslTruststorePassword,
+        @Value("\${kafka.ssl.keystore.path:}") String sslKeystoreLocation,
+        @Value("\${ssl.keystore.password:}") String sslKeystorePassword,
+        @Value("\${ssl.key.password:}") String sslKeyPassword,
+        @Value("\${kafka.consumer.auto-offset-reset}") String autoOffsetReset,
+        @Value("\${kafka.state.dir}") String stateDir
     ) {
         val settings = new Properties();
         settings.put(APPLICATION_ID_CONFIG, applicationId);
