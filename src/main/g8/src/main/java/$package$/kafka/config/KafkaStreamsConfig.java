@@ -1,6 +1,6 @@
-package \$package\$.kafka.config;
+package $package$.kafka.config;
 
-import com.rewe.omm.order.fixpoint.calculation.helper.OrderTimestampExtractor;
+import $package$.kafka.config.KafkaTimestampExtractor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.apache.kafka.streams.KafkaStreams;
@@ -18,6 +18,8 @@ import static org.apache.kafka.common.config.SaslConfigs.SASL_MECHANISM;
 import static org.apache.kafka.common.config.SslConfigs.*;
 import static org.apache.kafka.common.serialization.Serdes.String;
 import static org.apache.kafka.streams.StreamsConfig.*;
+
+\$package\$.kafka.config;
 
 @Slf4j
 @Configuration
@@ -54,7 +56,7 @@ public class KafkaStreamsConfig {
         settings.put(SSL_KEYSTORE_PASSWORD_CONFIG, sslKeystorePassword);
         settings.put(SSL_KEY_PASSWORD_CONFIG, sslKeyPassword);
         settings.put(STATE_DIR_CONFIG, stateDir);
-        settings.put(DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG, OrderTimestampExtractor.class);
+        settings.put(DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG, KafkaTimestampExtractor.class);
         settings.put("commit.interval.ms", 1000);
 
         return settings;
