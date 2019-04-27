@@ -2,7 +2,7 @@ server:
   port: 8080
 
 kafka:
-  application-id: bd-omm-order-fixpoint-calculator
+  application-id: $name_norm$
   state:
     dir: /tmp/kafka-streams
   consumer:
