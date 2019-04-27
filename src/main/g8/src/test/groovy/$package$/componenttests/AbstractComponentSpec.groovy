@@ -1,8 +1,5 @@
-package $package$.componenttests;
+package $package$.componenttests
 
-import org.apache.kafka.streams.KafkaStreams
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.SpringBootTest
 import spock.lang.Specification
 import spock.util.concurrent.PollingConditions
@@ -12,9 +9,6 @@ abstract class AbstractComponentSpec extends Specification {
     private int port
 
     protected PollingConditions pollingConditions = new PollingConditions(timeout: 10)
-
-    @Autowired
-    private KafkaStreams kafkaStreams;
 
 
     def setupSpec() {
