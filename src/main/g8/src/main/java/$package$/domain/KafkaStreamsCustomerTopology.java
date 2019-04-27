@@ -9,6 +9,8 @@ import org.apache.kafka.streams.Topology;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import static org.apache.kafka.streams.kstream.Consumed.with;
+
 @Configuration
 @Slf4j
 public class KafkaStreamsCustomerTopology {
