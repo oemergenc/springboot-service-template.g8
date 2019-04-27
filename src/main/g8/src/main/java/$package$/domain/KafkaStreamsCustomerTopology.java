@@ -20,9 +20,9 @@ public class KafkaStreamsCustomerTopology {
     public Topology topologyBuilder() {
 
         StreamsBuilder builder = new StreamsBuilder();
-        val openClosedLieferserviceOrders = builder.stream("customer", with(Serdes.String(), CUSTOMER_SERDE))
+        builder.stream("customer", with(Serdes.String(), CUSTOMER_SERDE))
             .peek((key, value) -> log.info("Received customer message {}", key))
-            .to("customer2", Produced.with(Serdes.String(), CUSTOMER_SERDE))
+            .to("customer2", Produced.with(Serdes.String(), CUSTOMER_SERDE));
 
         return builder.build();
     }
