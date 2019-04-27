@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+kafka:
+  application-id: bd-omm-order-fixpoint-calculator
+  state:
+    dir: /tmp/kafka-streams
+  consumer:
+    auto-offset-reset: earliest
+  security:
+    protocol: PLAINTEXT
+  sasl:
+    mechanism: PLAIN  
+  broker:
+    address:
+      list: localhost:9092
+
+# application:   
