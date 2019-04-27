@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @Slf4j
 public class KafkaStreamsCustomerTopology {
-    public static final Serde<KafkaOrderMessage> CUSTOMER_SERDE = getSerde(KafkaCustomerMessage.class);
+    public static final Serde<KafkaCustomerMessage> CUSTOMER_SERDE = getSerde(KafkaCustomerMessage.class);
 
     @Bean
     public Topology topologyBuilder() {
@@ -20,7 +20,7 @@ public class KafkaStreamsCustomerTopology {
         StreamsBuilder builder = new StreamsBuilder();
         val openClosedLieferserviceOrders = builder.stream("customer", with(Serdes.String(), CUSTOMER_SERDE))
             .peek((key, value) -> log.info("Received customer message {}", key))
-            ..to("customer2", Produced.with(Serdes.String(), CUSTOMER_SERDE))
+            .to("customer2", Produced.with(Serdes.String(), CUSTOMER_SERDE))
 
         return builder.build();
     }

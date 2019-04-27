@@ -10,13 +10,13 @@ import org.apache.kafka.common.serialization.Serializer;
 
 import java.util.Map;
 
-public class JsonPOJOSerializer<T> implements Serializer<T> {
+public class JsonPojoSerializer<T> implements Serializer<T> {
     private final ObjectWriter objectWriter;
 
     /**
      * Default constructor needed by Kafka
      */
-    public JsonPOJOSerializer() {
+    public JsonPojoSerializer() {
         val objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);

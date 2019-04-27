@@ -9,13 +9,13 @@ import org.apache.kafka.common.serialization.Deserializer;
 
 import java.util.Map;
 
-public class JsonPOJODeserializer<T> implements Deserializer<T> {
+public class JsonPojoDeserializer<T> implements Deserializer<T> {
     private final ObjectReader objectReader;
 
     /**
      * Default constructor needed by Kafka
      */
-    public JsonPOJODeserializer(Class<T> type) {
+    public JsonPojoDeserializer(Class<T> type) {
         val objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         objectReader = objectMapper.readerFor(type);
