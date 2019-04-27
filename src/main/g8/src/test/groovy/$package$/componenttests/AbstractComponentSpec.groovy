@@ -9,7 +9,6 @@ import spock.util.concurrent.PollingConditions
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 abstract class AbstractComponentSpec extends Specification {
-    @Value("${local.server.port}")
     private int port
 
     protected PollingConditions pollingConditions = new PollingConditions(timeout: 10)
