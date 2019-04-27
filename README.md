@@ -28,7 +28,7 @@ g8 https://github.com/oemergenc/springboot-service-template.g8.git
 ```   
 or using sbt:
 ```
-sbt https://github.com/oemergenc/springboot-service-template.g8.git
+sbt new https://github.com/oemergenc/springboot-service-template.g8.git
 ```
 See the following demo for guidance:
 ![giter8 template](https://raw.githubusercontent.com/oemergenc/springboot-service-template.g8/master/demo/demo.gif)
